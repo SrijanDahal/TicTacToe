@@ -1,5 +1,4 @@
 const typical = (function() {
-    let drawpoints = querySelector(".drawspoints");
     let names = document.querySelector(".names");
     let player1wins = document.querySelector(".player1wins");
     let player2wins = document.querySelector(".player2wins");
@@ -53,8 +52,7 @@ const typical = (function() {
                         }
                 
                         else {
-                            drawpoints.textContent++;
-                            move = 0;
+                            return "";
                         }
                     }
 
@@ -80,13 +78,11 @@ const typical = (function() {
         }
 
         move = 0;
-        player1.value = "";
-        player2.value = "";
-        scplayer1name.textContent = player1.value;
-        scplayer2name.textContent = player2.value;
+        
+        scplayer1name.textContent = "Player 1";
+        scplayer2name.textContent = "player2";
         player1wins.textContent = 0;
         player2wins.textContent = 0;
-        drawpoints.textContent = 0;
     }
 
     function startgame() {
@@ -95,6 +91,8 @@ const typical = (function() {
         }
         scplayer1name.textContent = player1.value;
         scplayer2name.textContent = player2.value;
+        player1.value = "";
+        player2.value = "";
     }
 
     function newgame() {
@@ -108,7 +106,6 @@ const typical = (function() {
 
     return {
         entertheMark: entertheMark,
-        checkTheMove: checkTheMove,
         startgame: startgame,
         newgame: newgame,
         resetgame: resetgame,
